@@ -8,7 +8,9 @@ const bodyParser    = require("body-parser");
 const app           = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
+// Use the following code to serve images, CSS files, and JavaScript files in a directory named "public":
 app.use(express.static("public"));
+// Which includes the index.html file
 
 // The in-memory database of tweets. It's a basic object with an array in it.
 const db = require("./lib/in-memory-db");
