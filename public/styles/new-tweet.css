@@ -24,9 +24,10 @@
   padding-left: 10px;
 }
 
-.new-tweet input {
-}
-
 .new-tweet .counter {
   float: right;
+}
+
+.new-tweet .counter.invalid {
+  color: #f00;
 }
