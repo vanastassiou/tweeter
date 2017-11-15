@@ -1,0 +1,34 @@
+.published-tweet {
+  border-radius: 4px;
+  padding: 10px;
+  width: 85%;
+  margin: 0 2em;
+}
+
+.published.tweet article {
+  border: 1px solid lightgray;
+}
+
+.published-tweet header {
+  background: #eee;
+}
+
+.published-tweet.avatar {
+
+}
+
+.published-tweet.realname {
+
+}
+
+.published-tweet.username {
+
+}
+
+.published-tweet p {
+
+}
+
+.published-tweet footer {
+
+}

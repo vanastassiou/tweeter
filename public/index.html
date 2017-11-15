@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/old-tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -31,24 +32,25 @@
     <main class="container">
     <!-- New tweet section -->
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <h1 class="heading">Compose Tweet</h1>
         <form action="/tweets" method="POST">
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <textarea class="text" name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
       </section>
 
-      <section class="old-tweets">
+      <section class="published-tweet">
         <article>
           <header>
-            <p>Avatar image goes here, aligned left. Display name goes here, aligned right.</p>
-
-            <p>So does the handle</p>
+            <span class="avatar">image.jpg</span>
+            <span class="realname">realname</span>
+            <span class="username">@username</span>
           </header>
-            <p>Tweet text goes here</p>
+          <main class="text">New tweet goes here</main>
+          </main>
           <footer>
-            <p>Timestamp and icons go here</p>
+            <span>Timestamp goes here</span>
           </footer>
         </article>
       </section>
