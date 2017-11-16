@@ -1,6 +1,7 @@
 "use strict";
 
 const userHelper    = require("../lib/util/user-helper")
+const debug         = require("debug")("tweets")
 
 const express       = require('express');
 const tweetsRoutes  = express.Router();
@@ -8,6 +9,7 @@ const tweetsRoutes  = express.Router();
 module.exports = function(DataHelpers) {
 
   tweetsRoutes.get("/", function(req, res) {
+    debug("hello")
     DataHelpers.getTweets((err, tweets) => {
       if (err) {
         res.status(500).json({ error: err.message });

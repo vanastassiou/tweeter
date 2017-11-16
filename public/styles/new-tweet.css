@@ -7,7 +7,7 @@
   padding: 10px;
 }
 
-.new-tweet.heading {
+.new-tweet .heading {
   margin-top: 0px;
   border-bottom: 0.05em solid #000;
 }

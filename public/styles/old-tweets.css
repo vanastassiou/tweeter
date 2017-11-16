@@ -11,6 +11,7 @@
 
 .published-tweet header {
   background: #eee;
+  padding: 8px;
 }
 
 .published-tweet .text {
@@ -19,17 +20,19 @@
 
 .published-tweet .avatar {
   display: inline-block;
-  padding: 8px;
 }
 
-.published-tweet .realname {
+.published-tweet .name {
   display: inline-block;
+  vertical-align: top;
+  padding = 0;
   line-height: 0;
-}
 
-.published-tweet .username {
+}
+.published-tweet .handle {
   display: inline-block;
-  align: right;
+  float: right;
+  font-size: 90%;
 }
 
 .published-tweet footer {
