@@ -13,14 +13,20 @@ $(function() {
 
   var $submitTweet = $('#submitTweet');
   $submitTweet.on('click', function submitNewTweet(event) {
+    const maxLength = 140;
+    const charsLeft = maxLength - $(".new-tweet textarea").val().length;
+    if (charsLeft < 0) {
+      $("#submitTweet").attr("disabled", true);
+      alert("Sorry, your tweet must be 140 characters or fewer.");
+    }
+
     event.preventDefault();
     $.ajax({
       url: '/tweets',
       method: 'POST',
       data: $(".new-tweet form").serialize(),
-      success: function () {
-        delete data;
-        renderTweets(data);
+      success: function (tweet) {
+        loadTweets();
       }
     });
   });
