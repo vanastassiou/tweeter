@@ -22,6 +22,10 @@
   float: left;
 }
 
+.new-tweet .notice {
+  
+}
+
 .new-tweet .counter {
   display: block;
   text-align: right;

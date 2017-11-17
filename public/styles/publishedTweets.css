@@ -1,3 +1,8 @@
+.new-tweet .heading {
+  margin-top: 0px;
+  border-bottom: 0.05em solid #000;
+}
+
 .published-tweet {
   border-radius: 4px;
   margin: 1em 2em;
@@ -14,9 +19,6 @@
   padding: 8px;
 }
 
-.published-tweet .text {
-  border-bottom: 0.05em solid lightgray;
-}
 
 .published-tweet .avatar {
   display: inline-block;
@@ -33,6 +35,10 @@
   display: inline-block;
   float: right;
   font-size: 90%;
+}
+
+.published-tweet .text {
+  border-bottom: 0.05em solid lightgray;
 }
 
 .published-tweet footer {

@@ -13,22 +13,23 @@ $(function() {
 
   var $submitTweet = $('#submitTweet');
   $submitTweet.on('click', function submitNewTweet(event) {
+    event.preventDefault();
     const maxLength = 140;
     const charsLeft = maxLength - $(".new-tweet textarea").val().length;
     if (charsLeft < 0) {
-      $("#submitTweet").attr("disabled", true);
       alert("Sorry, your tweet must be 140 characters or fewer.");
+    // } else if (too few chars) {
+      // nag about it
+    } else {
+      $.ajax({
+        url: '/tweets',
+        method: 'POST',
+        data: $(".new-tweet form").serialize(),
+        success: function (tweet) {
+          loadTweets();
+        }
+      });
     }
-
-    event.preventDefault();
-    $.ajax({
-      url: '/tweets',
-      method: 'POST',
-      data: $(".new-tweet form").serialize(),
-      success: function (tweet) {
-        loadTweets();
-      }
-    });
   });
 
   function createTweetElement(tweet) {
@@ -47,7 +48,7 @@ $(function() {
       <span class="timestamp">${date}</span>
       </footer>
     `);
-    content.text(tweet.content.text);
+    content.text(tweet.content.text); // Preventing XSS via form
     article.append(header).append(content).append(footer);
     return article;
   };
