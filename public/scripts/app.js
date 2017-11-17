@@ -33,17 +33,23 @@ $(function() {
 
   function createTweetElement(tweet) {
     const date = new Date(tweet.created_at);
-    return $(`<article>
+    const article = $("<article></article>");
+    const header = $(`
       <header>
         <span class="avatar"><img src="${tweet.user.avatars.small}"></span>
         <h1 class="heading name">${tweet.user.name}</h1>
         <span class="handle">${tweet.user.handle}</span>
       </header>
-      <main class="content">${tweet.content.text}</main>
+    `);
+    const content = $("<main class='content'></main>");
+    const footer = $(`
       <footer>
-        <span class="timestamp">${date}</span>
+      <span class="timestamp">${date}</span>
       </footer>
-    </article>`);
+    `);
+    content.text(tweet.content.text);
+    article.append(header).append(content).append(footer);
+    return article;
   };
   loadTweets();
 });
