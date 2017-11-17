@@ -17,18 +17,20 @@
   padding: 0.5em;
 }
 
-.new-tweet input {
+#submitTweet {
   display: inline-block;
   float: left;
 }
 
 .new-tweet .notice {
-  
+  font-size: 80%;
+  padding-left: 10px;
+  display: inline-block;
 }
 
 .new-tweet .counter {
-  display: block;
-  text-align: right;
+  display: inline-block;
+  float: right;
   margin-bottom: 0.8em;
   font-size: 80%;
   font-style: italic;

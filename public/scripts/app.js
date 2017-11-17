@@ -38,9 +38,11 @@ $(function() {
     const date = new Date(tweet.created_at);
     const article = $("<article></article>");
     const header = $(`
-      <header>
-        <span class="avatar"><img src="${tweet.user.avatars.small}"></span>
-        <h1 class="heading name">${tweet.user.name}</h1>
+      <header class="published-header">
+        <span class="userinfo">
+          <span class="avatar"><img src="${tweet.user.avatars.small}"></span>
+          <span class="name">${tweet.user.name}</span>
+        </span>
         <span class="handle">${tweet.user.handle}</span>
       </header>
     `);

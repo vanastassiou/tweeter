@@ -1,46 +1,53 @@
-.new-tweet .heading {
-  margin-top: 0px;
-  border-bottom: 0.05em solid #000;
+.published-tweets {
+  margin: 0 2em;
+  opacity: 0.5;
 }
 
-.published-tweet {
+.published-tweets:hover {
+  opacity: 1;
+}
+
+.published-tweets article {
   border-radius: 4px;
-  margin: 1em 2em;
+  overflow: hidden;
   border: 1px solid gray;
-  padding: 10px;
+  margin:0.5em 0 0.5em 0;
 }
 
-.published.tweet article {
-
-}
-
-.published-tweet header {
+.published-header {
   background: #eee;
-  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
 }
 
-
-.published-tweet .avatar {
-  display: inline-block;
+.userinfo {
+  display: flex;
 }
 
-.published-tweet .name {
-  display: inline-block;
-  vertical-align: top;
-  padding = 0;
-  line-height: 0;
-
-}
-.published-tweet .handle {
-  display: inline-block;
-  float: right;
-  font-size: 90%;
+.published-tweets .avatar img {
+  border-radius: 4px;
 }
 
-.published-tweet .text {
-  border-bottom: 0.05em solid lightgray;
+.published-tweets .name {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-left: 0.5em;
 }
 
-.published-tweet footer {
+.published-tweets .handle {
+
+}
+
+.published-tweets .content {
+  padding: 1em 0.5em 1em;
+  min-height:6em;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.published-tweets footer {
+  border-top: 0.05em solid lightgray;
   font-size: 80%;
+  padding:0.6em;
 }
