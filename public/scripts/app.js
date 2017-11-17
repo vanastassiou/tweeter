@@ -4,8 +4,26 @@ $(function() {
   function renderTweets(tweetData) {
     tweetData.forEach(function (tweet) {
       $tweetContainer.prepend(createTweetElement(tweet));
+    });
+  };
+
+  function loadTweets() {
+    $.getJSON("/tweets", renderTweets);
+  };
+
+  var $submitTweet = $('#submitTweet');
+  $submitTweet.on('click', function submitNewTweet(event) {
+    event.preventDefault();
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: $(".new-tweet form").serialize(),
+      success: function () {
+        delete data;
+        renderTweets(data);
+      }
+    });
   });
-};
 
   function createTweetElement(tweet) {
     const date = new Date(tweet.created_at);
@@ -21,20 +39,5 @@ $(function() {
       </footer>
     </article>`);
   };
-  console.log(renderTweets(data));
+  loadTweets();
 });
-
-function submitNewTweet() {
-  var $submitTweet = $('#submitTweet');
-  $submitTweet.on('click', function () {
-    console.log('Submitting new Tweet...');
-    $.ajax({
-      url: '/tweets',
-      method: 'POST',
-      success: function (morePostsHtml) {
-        console.log('Tweet submitted: ', morePostsHtml);
-        $button.replaceWith(morePostsHtml);
-      }
-    });
-  )};
-};
