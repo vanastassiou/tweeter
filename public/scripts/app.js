@@ -11,21 +11,23 @@ $(function() {
     $.getJSON("/tweets", renderTweets);
   };
 
-  var $submitTweet = $('#submitTweet');
-  $submitTweet.on('click', function submitNewTweet(event) {
+  $('#submitTweet').on('click', function submitNewTweet(event) {
     event.preventDefault();
+    const noticeElement = $(this).parent().find('.notice');
     const maxLength = 140;
     const charsLeft = maxLength - $(".new-tweet textarea").val().length;
     if (charsLeft < 0) {
-      alert("Sorry, your tweet must be 140 characters or fewer.");
-    // } else if (too few chars) {
-      // nag about it
+      // Implement timer that clears text after n sec?
+      noticeElement.text("Sorry, your tweet must be 140 characters or fewer.");
+    } else if (charsLeft === 140) {
+      noticeElement.text("Sorry, you can't submit an empty tweet.");
     } else {
+      noticeElement.text("");
       $.ajax({
         url: '/tweets',
         method: 'POST',
         data: $(".new-tweet form").serialize(),
-        success: function (tweet) {
+        success: function (uselessData) {
           loadTweets();
         }
       });
