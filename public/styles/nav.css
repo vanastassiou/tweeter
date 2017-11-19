@@ -12,14 +12,31 @@
 }
 
 #nav-bar .logo {
-  float: left;
   height: 80px;
   width: 80px;
+  display: inline-block;
 }
 
 #nav-bar .header {
-  float: left;
   color: #e8fdff;
   line-height: 80px;
   font-size: 200%;
+  display: inline-block;
+}
+
+#nav-bar .navspan {
+  display: flex;
+}
+
+#nav-bar button {
+  background-color: #d6fff0;
+  border-radius: 4px;
+  border: 1px solid black;
+  padding: 1em 1em;
+  text-align: center;
+  color: #00a087;
+  display: inline-block;
+  font-size: 1.25em;
+  position: absolute;
+  right: auto;
 }

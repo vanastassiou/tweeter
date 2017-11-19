@@ -11,6 +11,8 @@ $(function() {
     $.getJSON("/tweets", renderTweets);
   };
 
+// New tweet conditional event handler
+
   $('#submitTweet').on('click', function submitNewTweet(event) {
     event.preventDefault();
     const noticeElement = $(this).parent().find('.notice');
@@ -33,6 +35,8 @@ $(function() {
       });
     }
   });
+
+// New tweet element generator
 
   function createTweetElement(tweet) {
     const date = new Date(tweet.created_at);
