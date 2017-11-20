@@ -42,6 +42,7 @@ $(function() {
       });
     }
     $(".new-tweet textarea").val("");
+    $(".new-tweet textarea").trigger("input");
   });
 
 
