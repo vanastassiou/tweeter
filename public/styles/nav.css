@@ -37,3 +37,8 @@
   margin-top: 0.25em;
   margin-bottom: 0.6em;
 }
+
+#compose:hover {
+  background: white;
+  color: black;
+}
