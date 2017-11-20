@@ -78,10 +78,9 @@ $(function() {
 
 
   $("#compose").click(function() {
-    const tweetField = $(this).parent().find("textarea");
     $(".new-tweet").slideToggle( "fast", function() {
     });
-    $tweetField.focus;
+    $("#tweetField").focus();
   });
 
 
