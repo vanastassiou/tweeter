@@ -5,6 +5,7 @@ $(function() {
     tweetData.forEach(function (tweet) {
       $tweetContainer.prepend(createTweetElement(tweet));
     });
+    $("time.timeago").timeago();
   };
 
   function loadTweets() {
@@ -40,7 +41,6 @@ $(function() {
 // New tweet element generator
 
   function createTweetElement(tweet) {
-    $("time.timeago").timeago();
     const date = new Date(tweet.created_at);
     // ISO datestamp needed for timeago() to work
     const dateISO = date.toISOString();
@@ -58,6 +58,11 @@ $(function() {
     const footer = $(`
       <footer>
       <span><time class="timeago" datetime="${dateISO}"></time></span>
+      <span class="icons">
+        <i class="fa fa-flag"></i>
+        <i class="fa fa-retweet"></i>
+        <i class="fa fa-heart"></i>
+        </span>
       </footer>
     `);
     content.text(tweet.content.text); // Preventing XSS via form
