@@ -11,10 +11,10 @@ $(function() {
     });
     $("time.timeago").timeago();
     $(".oldtweet").mouseover(function() {
-      this.style.opacity = 1;
+      $(this).addClass("hover");
     });
     $(".oldtweet").mouseout(function() {
-      this.style.opacity = 0.5;
+      $(this).removeClass("hover");
     });
   };
 

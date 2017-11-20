@@ -13,6 +13,10 @@
   opacity: 0.5;
 }
 
+#tweets-container .oldtweet.hover {
+  opacity: 1;
+}
+
 #tweets-container header {
   background: #eee;
   display: flex;
