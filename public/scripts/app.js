@@ -1,20 +1,26 @@
 $(function() {
   const $tweetContainer = $("#tweets-container");
 
+  function loadTweets() {
+    $.getJSON("/tweets", renderTweets);
+  };
+
   function renderTweets(tweetData) {
     tweetData.forEach(function (tweet) {
       $tweetContainer.prepend(createTweetElement(tweet));
     });
     $("time.timeago").timeago();
-  };
-
-  function loadTweets() {
-    $.getJSON("/tweets", renderTweets);
+    $(".oldtweet").mouseover(function() {
+      this.style.opacity = 1;
+    });
+    $(".oldtweet").mouseout(function() {
+      this.style.opacity = 0.5;
+    });
   };
 
 // New tweet conditional event handler
 
-  $('#submitTweet').on('click', function submitNewTweet(event) {
+  $("#submitTweet").on("click", function submitNewTweet(event) {
     event.preventDefault();
     const noticeElement = $(this).parent().find('.notice');
     const maxLength = 140;
@@ -44,7 +50,7 @@ $(function() {
     const date = new Date(tweet.created_at);
     // ISO datestamp needed for timeago() to work
     const dateISO = date.toISOString();
-    const article = $("<article></article>");
+    const article = $("<article class='oldtweet'></article>");
     const header = $(`
       <header>
         <span class="userinfo">
