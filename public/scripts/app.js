@@ -41,6 +41,7 @@ $(function() {
         }
       });
     }
+    $(".new-tweet textarea").val("");
   });
 
 
