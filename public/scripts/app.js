@@ -36,10 +36,14 @@ $(function() {
     }
   });
 
+
 // New tweet element generator
 
   function createTweetElement(tweet) {
+    $("time.timeago").timeago();
     const date = new Date(tweet.created_at);
+    // ISO datestamp needed for timeago() to work
+    const dateISO = date.toISOString();
     const article = $("<article></article>");
     const header = $(`
       <header>
@@ -53,7 +57,7 @@ $(function() {
     const content = $("<main class='content'></main>");
     const footer = $(`
       <footer>
-      <span class="timestamp">${date}</span>
+      <span><time class="timeago" datetime="${dateISO}"></time></span>
       </footer>
     `);
     content.text(tweet.content.text); // Preventing XSS via form
@@ -61,12 +65,13 @@ $(function() {
     return article;
   };
 
-  // Compose button event handler
-//   $("#nav-bar button").on(click, function(){
-//     $( ".new-tweet" ).slideDown(function() {
-//     // Animation complete.
-//   });
-// });
+
+  $("#compose").click(function() {
+    const tweetField = $(this).parent().find("textarea");
+    $(".new-tweet").slideToggle( "fast", function() {
+    });
+    $tweetField.focus;
+  });
 
 
   loadTweets();

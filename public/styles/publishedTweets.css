@@ -3,9 +3,9 @@
   opacity: 0.5;
 }
 
-/*#tweets-container:hover {
-  opacity: 1;
-}*/
+#tweets-container header:hover {
+    top: 80px;
+}
 
 #tweets-container article {
   border-radius: 4px;
