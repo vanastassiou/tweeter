@@ -42,7 +42,7 @@ $(function() {
     const date = new Date(tweet.created_at);
     const article = $("<article></article>");
     const header = $(`
-      <header class="published-header">
+      <header>
         <span class="userinfo">
           <span class="avatar"><img src="${tweet.user.avatars.small}"></span>
           <span class="name">${tweet.user.name}</span>
@@ -60,5 +60,14 @@ $(function() {
     article.append(header).append(content).append(footer);
     return article;
   };
+
+  // Compose button event handler
+//   $("#nav-bar button").on(click, function(){
+//     $( ".new-tweet" ).slideDown(function() {
+//     // Animation complete.
+//   });
+// });
+
+
   loadTweets();
 });

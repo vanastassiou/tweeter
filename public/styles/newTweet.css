@@ -5,6 +5,7 @@
   margin: 0 2em;
   width: 85%;
   padding: 10px;
+  display: none;
 }
 
 .new-tweet .heading {

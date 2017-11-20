@@ -1,48 +1,48 @@
-.published-tweets {
+#tweets-container {
   margin: 0 2em;
   opacity: 0.5;
 }
 
-.published-tweets:hover {
+/*#tweets-container:hover {
   opacity: 1;
-}
+}*/
 
-.published-tweets article {
+#tweets-container article {
   border-radius: 4px;
   overflow: hidden;
   border: 1px solid gray;
   margin:0.5em 0 0.5em 0;
 }
 
-.published-header {
+#tweets-container header {
   background: #eee;
   display: flex;
   justify-content: space-between;
   padding: 0.5em;
 }
 
-.userinfo {
+#tweets-container.userinfo {
   display: flex;
 }
 
-.published-tweets .avatar img {
+#tweets-container .avatar img {
   border-radius: 4px;
 }
 
-.published-tweets .name {
+#tweets-container .name {
   font-size: 1.5em;
   font-weight: bold;
   padding-left: 0.5em;
 }
 
-.published-tweets .content {
+#tweets-container .content {
   padding: 1em 0.5em 1em;
   min-height:6em;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
 
-.published-tweets footer {
+#tweets-container footer {
   border-top: 0.05em solid lightgray;
   font-size: 80%;
   padding:0.6em;

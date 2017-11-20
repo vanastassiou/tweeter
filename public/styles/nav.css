@@ -26,6 +26,7 @@
 
 #nav-bar .navspan {
   display: flex;
+  margin: 0 auto;
 }
 
 #nav-bar button {
@@ -35,8 +36,7 @@
   padding: 1em 1em;
   text-align: center;
   color: #00a087;
-  display: inline-block;
   font-size: 1.25em;
   position: absolute;
-  right: auto;
+  margin-left: 40%
 }
