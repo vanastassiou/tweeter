@@ -51,4 +51,6 @@
 #tweets-container .fa {
   color: #00a087;
   display: inline-block;
+  float: right;
+  margin: 0.25em;
 }

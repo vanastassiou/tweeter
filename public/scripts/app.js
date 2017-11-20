@@ -59,9 +59,9 @@ $(function() {
       <footer>
       <span><time class="timeago" datetime="${dateISO}"></time></span>
       <span class="icons">
-        <i class="fa fa-flag"></i>
-        <i class="fa fa-retweet"></i>
         <i class="fa fa-heart"></i>
+        <i class="fa fa-retweet"></i>
+        <i class="fa fa-flag"></i>
         </span>
       </footer>
     `);
